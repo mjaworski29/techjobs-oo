@@ -57,7 +57,6 @@ public class JobController {
             }
 
             Location newLocation = null;
-
             for (int i = 0; i < jobForm.getLocations().size(); i++) {
                 if (Objects.equals(jobForm.getLocations().get(i).getValue(), jobForm.getLocation())) {
                     newLocation = jobForm.getLocations().get(i);
@@ -84,8 +83,7 @@ public class JobController {
             Job newJob = new Job(jobForm.getName(), newEmployer, newLocation, newPositionType, newCoreCompetency);
             jobData.add(newJob);
             model.addAttribute(newJob);
-            return "redirect:/";
-
+            return "redirect:"+"?id=" + newJob.getId();
 
     }
     }
